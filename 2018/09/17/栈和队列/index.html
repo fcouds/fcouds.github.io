@@ -144,10 +144,22 @@
                 
                 
                 
-                <li class="">
-                    <a href="/tags">
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/基础/">基础</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
@@ -186,6 +198,13 @@
         <div class="tag-article">
             
             <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/基础/">基础</a>
+                
+            </span>
+            
+            <span class="label label-gal">
                 <i class="fa fa-calendar"></i> 2018-09-17
             </span>
             
@@ -204,12 +223,50 @@
             </p>
             <p>
                 
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/基础/">基础</a>
+                
+                
                 
             </p>
         </center>
     </div>
     <div class="content-article">
-        <p>测试文章，有时间补上23333~~~</p>
+        <p>第一篇博客就水一下栈和队列吧~~望轻喷=</p>
+<p>栈：</p>
+<pre><code>栈操作网上各种解释（百度）千奇百怪~甚是佩服;
+简而言之，栈就是一个有缺陷的数组，你只能在数组的最后一个元素进行删除和添加;
+窝的栈一般就是a[++t]=value(添加元素)/t--（删除元素）;
+栈简单实用,居家旅行必备（当然得有用才行2333
+栈除了一些裸题外，一般还可以应用于深搜的非递归版本(~当然我会选择写递归);
+
+简单介绍栈的一个特性，也就是栈的出栈入栈顺序的总数符合卡特兰数(Catalan);
+何谓出栈入栈顺序，简而言之：比如当n=3是有三个数，姑且叫1 2 3，辣么可以有如下的可能：
+1 2 3 3 2 1
+1 2 2 3 3 1
+1 2 2 1 3 3
+1 1 2 2 3 3
+1 1 2 3 3 2
+一种五种，即第三个卡特兰数为5
+1 1 2 5 14 42 132 429....（卡特兰数第0项开始~~~;
+至于求解方式有递推公式:
+a[n]=a[0]*a[n-1]+a[1]*a[n-2]+...+a[n-1]*a[0];(a[0]=1,n&gt;=1);
+
+然(其)后(实)我(是)就(只)不(会)再(这)废(么)话(点);
+</code></pre><p>队列：</p>
+<pre><code>借鉴上面栈的说法，队列也可以看成一个有缺陷的数组，都只能在数组末尾添加元素，不同的是，队列只能在数组开头删除;
+可以用俩元素l,r分别代表元素的开头和结尾下标，添加元素即a[++r]=value,删除的话就是l--;
+当然这是栈最朴素(笨)的实现方式，极易发现这样很费空间，即每次删除操作就会产生一个多于的空间不再使用，因此就有了循环队列:
+
+循环队列基本构造和队列一样，就是加个l,r极值的限制（姑且限制为max)，当进行添加操作时使得r&gt;max，那么就使得r=1;
+相信很多人有疑问了，现在状态下的区间[l,r]的元素不对了————没错，现在队列里的元素实际上是[1,l]+[r,max];
+同时易证循环队列里有且只有这两种状态，辣么好办，直接拿一个变量标记下就ok（可能有人考虑直接把lr比大小就直接能分离两种状态,但是l==r时却是不好判断;
+
+上面说了栈可以用于深搜，那么它的好基友队列自然就应用于广搜了;
+</code></pre><p>STL</p>
+<pre><code>栈(stack),队列(queue);
+</code></pre><p>水完了，这个应该不需要啥代码，相信大佬们早就会了!</p>
 
     </div>
 </article>
@@ -299,13 +356,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/15/hello-world/">Hello World</a>
+                    <a href="/2018/09/17/栈和队列/">栈和队列</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/09/17/栈和队列/">栈和队列</a>
+                    <a href="/2018/09/15/hello-world/">Hello World</a>
                 </span>
             </li>
             
@@ -329,6 +386,8 @@
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/基础/" style="font-size: 17.708832142296494px;" class="tag-cloud-link">基础</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
